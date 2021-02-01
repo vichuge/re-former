@@ -6,7 +6,7 @@ This is part of the Forms Project in The Odin Project’s Ruby on Rails Curricul
 
 ## Built With
 
-- Ruby
+- Ruby 2.7.2
 - Rails 6.1.1
 - Windows subsystem Linux (Ubuntu 20.04.1 LTS)
 
