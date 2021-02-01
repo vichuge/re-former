@@ -1,6 +1,6 @@
-<h3>New User:</h3>
-<form action="/users" method="post" accept-charset="UTF-8">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<h1>New User:</h1>
+<!--<form action="/users" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username" value=""><br>
 
@@ -11,4 +11,34 @@
   <input type="password" id="password" name="password" value=""><br>
 
   <input type="submit" value="Submit">
-</form> 
+</form>-->
+<% @user = User.new %>
+<%= form_with url: "/users/", model: @user do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
