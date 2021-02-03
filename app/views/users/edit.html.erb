@@ -1,5 +1,5 @@
 <h1>Edit User:</h1>
-<!--<form action="/users" method="post" accept-charset="UTF-8">
+<!--<form action="<%= user_path %>" method="post" accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label for="username">Username:</label><br>
@@ -14,7 +14,7 @@
   <input type="submit" value="Submit">
 </form>-->
 
-<!--<%= form_tag('/users', method: "post") do %>
+<!--<%= form_tag(user_path, method: "post") do %>
   <%= label_tag('username', 'Username:') %>
   <%= text_field_tag('user[username]') %>
   <br>
